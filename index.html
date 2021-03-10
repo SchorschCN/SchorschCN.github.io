@@ -29,7 +29,28 @@
 								<h1>Schorsch</h1>
 								<p>CS student<br />
 								share learning progress and experience<br />
-								in both CS and mastering language as well as life</p>
+								in both CS and mastering language as well as life<br />
+								<script>
+									Date.prototype.format = function (fmt) {
+										var o = {
+											"y+": this.getFullYear, //年
+											"M+": this.getMonth() + 1, //月份
+											"d+": this.getDate(), //日
+											"h+": this.getHours(), //小时
+											"m+": this.getMinutes(), //分
+											"s+": this.getSeconds() //秒
+										};
+										if (/(y+)/.test(fmt)) 
+											fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+										for (var k in o)
+											if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+										return fmt;
+									}
+									setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+								</script>
+								<div id="dateTime"></div>
+								<!-- https://blog.csdn.net/qq_35394434/article/details/83747008 -->
+								</p>
 							</div>
 						</div>
 						<nav>
@@ -39,7 +60,6 @@
 								<li><a href="#about">About</a></li>
 								<li><a href="#topics">Topics</a></li>
 								<li><a href="#contact">Contact</a></li>
-								<li><a href="#"><time datetime="">2021-03-11 00:20</time></a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
