@@ -1,0 +1,49 @@
+::-webkit-details-marker {
+    display: none;
+}
+::-moz-list-bullet {
+    font-size: 0;
+    float: left;
+}
+::marker {
+    font-size: 0;
+}
+summary {
+    display: block;
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+    user-select: none;
+    outline: 0;
+}
+
+summary[focus] {
+	outline: 1px dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+}
+summary span {
+	cursor: pointer;
+    color: #f5f7fce1;
+}
+
+
+summary span {
+	cursor: pointer;
+    color: #f5f7fce1;
+}
+
+.more {
+    display: none;
+}
+[open] .more {
+    display: block;
+}
+
+
+[open] summary span {
+    font-size: 0;
+}
+[open] summary span::before {
+    content: 'hide';
+    font-size: 15px;
+}
